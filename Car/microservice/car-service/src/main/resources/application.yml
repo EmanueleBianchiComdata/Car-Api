@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: 'jdbc:postgresql://localhost:5432/autodb'
+    username: user
+    password: '1234'
+  sql:
+    init:
+      platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: "CarGroup"      
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      
+logging:
+  level:
+    org:
+      springframework: ERROR
+    com:
+      mkyong: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
