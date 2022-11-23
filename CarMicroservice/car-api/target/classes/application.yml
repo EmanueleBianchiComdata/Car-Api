@@ -4,12 +4,16 @@ spring:
     url: 'jdbc:postgresql://localhost:5432/autodb'
     username: user
     password: '1234'
+  security:
+    user:
+      name: user
+      password: password        
   sql:
     init:
       platform: postgres
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
@@ -27,8 +31,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     listener:
-      ack-mode: manual
-      
+      ack-mode: manual   
 logging:
   level:
     org:

@@ -37,6 +37,11 @@ public class Car {
 		setPlate(plate);
 	}
 	
+	public Car(String brand, String plate) {
+		setBrand(brand);
+		setPlate(plate);
+	}
+	
 	public UUID getId() {
 		return id;
 	}

@@ -4,9 +4,9 @@ import com.comdata.carService.model.Car;
 
 public interface CarService {
 
-	public void addCar(Car car);
+	public Car addCar(Car car);
 	
-	public void updateCar(Car car);
+	public Car updateCar(Car car);
 	
-	public void deleteCar(Car car);
+	public Car deleteCar(Car car);
 }
